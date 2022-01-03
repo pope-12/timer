@@ -1,0 +1,11 @@
+<hr>
+<div *ngIf="isStarted">
+  {{getFormattedValue(remainingTime)}} left
+  <button (click)="stopTimer()">stop</button>
+</div>
+Timer value: {{getFormattedValue(timerValue * 60)}}
+
+<div *ngIf="!isStarted">
+  <mat-slider [(ngModel)]="timerValue" min="5" max="240" step="5" thumbLabel></mat-slider>
+  <button (click)="startTimer()">start</button>
+</div>
