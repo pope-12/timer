@@ -1,4 +1,5 @@
 # Timer
+[Site](https://serene-shockley-555882.netlify.app/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 

@@ -45,12 +45,18 @@ export class TimerComponent implements OnInit {
   }
 
   private timesUp() {
-    TimerComponent.notifyUser('Time is up!!!');
+    this.notifyUser();
   }
 
-  private static notifyUser(message: string) {
+  private notifyUser() {
     if (Notification.permission === 'granted') {
-      new Notification(message);
+      const title = 'Time is up!!!';
+      const options = {
+        requireInteraction: true,
+        body: `Timer of length ${this.getFormattedValue(this.timerValue * 60)} finished`
+      }
+
+      new Notification(title, options);
     }
   }
 
